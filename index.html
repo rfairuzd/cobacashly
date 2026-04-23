@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="id"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Cashly — AI Finance Command Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -371,6 +372,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
 
 /* History storage indicator */
 .storage-indicator{display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--ai-soft);border:1px solid rgba(124,58,237,.2);border-radius:100px;font-size:11px;font-weight:700;color:var(--ai)}
+.sync-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:100px;font-size:11px;font-weight:700;color:#059669}
 
 /* badges */
 .mini-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:100px;font-size:10px;font-weight:700}
@@ -401,7 +403,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
 .pm-cell .pm-pct{font-size:11px;font-weight:700;color:var(--text-3)}
 
 </style>
-<script id="cashly-snapshot" type="application/json">{"ap":null,"rev":{"2026-04-02":{"byOutlet":{"FTL CIKARANG":12656274,"FTL CIPONDOH":11294271,"FTL CIREUNDEU":11884966,"FTL GANDARIA":11440867,"FTL PONDOK GEDE":9278173,"FTL EPICULTURA":8660405,"FTL SEMESTA PENUH":8616822,"FTL KEMANG":17783087,"FTL MENTENG":12854278,"FTL KELAPA GADING":8930494,"FTL BINTARO":10746750},"total":124146387,"uploadedAt":"2026-04-16T08:12:12.222296"},"2026-04-03":{"byOutlet":{"FTL CIKARANG":8662569,"FTL CIPONDOH":10633131,"FTL CIREUNDEU":10422356,"FTL GANDARIA":11883593,"FTL PONDOK GEDE":12793498,"FTL EPICULTURA":12686003,"FTL SEMESTA PENUH":7662400,"FTL KEMANG":16955847,"FTL MENTENG":10504158,"FTL KELAPA GADING":15024960,"FTL BINTARO":11208782},"total":128437297,"uploadedAt":"2026-04-16T08:12:12.222309"},"2026-04-04":{"byOutlet":{"FTL CIKARANG":12859613,"FTL CIPONDOH":10735969,"FTL CIREUNDEU":14553462,"FTL GANDARIA":12968127,"FTL PONDOK GEDE":11536794,"FTL EPICULTURA":15400027,"FTL SEMESTA PENUH":14733686,"FTL KEMANG":13232634,"FTL MENTENG":19827729,"FTL KELAPA GADING":18359295,"FTL BINTARO":11804188},"total":156011524,"uploadedAt":"2026-04-16T08:12:12.222312"},"2026-04-05":{"byOutlet":{"FTL CIKARANG":12438587,"FTL CIPONDOH":13640467,"FTL CIREUNDEU":13972988,"FTL GANDARIA":14345117,"FTL PONDOK GEDE":13238211,"FTL EPICULTURA":11538410,"FTL SEMESTA PENUH":11500611,"FTL KEMANG":19881767,"FTL MENTENG":19443481,"FTL KELAPA GADING":17965198,"FTL BINTARO":16511356},"total":164476193,"uploadedAt":"2026-04-16T08:12:12.222314"},"2026-04-06":{"byOutlet":{"FTL CIKARANG":13287062,"FTL CIPONDOH":12299411,"FTL CIREUNDEU":10017368,"FTL GANDARIA":10527210,"FTL PONDOK GEDE":14433997,"FTL EPICULTURA":11104912,"FTL SEMESTA PENUH":6981819,"FTL KEMANG":15612827,"FTL MENTENG":11378646,"FTL KELAPA GADING":10860344,"FTL BINTARO":10423455},"total":126927051,"uploadedAt":"2026-04-16T08:12:12.222316"},"2026-04-07":{"byOutlet":{"FTL CIKARANG":12898546,"FTL CIPONDOH":7240942,"FTL CIREUNDEU":12638694,"FTL GANDARIA":11801409,"FTL PONDOK GEDE":12231998,"FTL EPICULTURA":9675975,"FTL SEMESTA PENUH":6749716,"FTL KEMANG":14527277,"FTL MENTENG":13864331,"FTL KELAPA GADING":9188098,"FTL BINTARO":9113148},"total":119930134,"uploadedAt":"2026-04-16T08:12:12.222318"},"2026-04-08":{"byOutlet":{"FTL CIKARANG":14299167,"FTL CIPONDOH":12276661,"FTL CIREUNDEU":9071206,"FTL GANDARIA":14376927,"FTL PONDOK GEDE":11708783,"FTL EPICULTURA":12530011,"FTL SEMESTA PENUH":7081140,"FTL KEMANG":12501188,"FTL MENTENG":13645482,"FTL KELAPA GADING":14682664,"FTL BINTARO":11143635},"total":133316864,"uploadedAt":"2026-04-16T08:12:12.222320"},"2026-04-09":{"byOutlet":{"FTL CIKARANG":9065102,"FTL CIPONDOH":11598278,"FTL CIREUNDEU":10112243,"FTL GANDARIA":12426791,"FTL PONDOK GEDE":12513069,"FTL EPICULTURA":10023685,"FTL SEMESTA PENUH":9825464,"FTL KEMANG":15307213,"FTL MENTENG":10315726,"FTL KELAPA GADING":15144561,"FTL BINTARO":12325572},"total":128657704,"uploadedAt":"2026-04-16T08:12:12.222322"},"2026-04-10":{"byOutlet":{"FTL CIKARANG":11242491,"FTL CIPONDOH":9343578,"FTL CIREUNDEU":11776427,"FTL GANDARIA":12465302,"FTL PONDOK GEDE":13509967,"FTL EPICULTURA":8956840,"FTL SEMESTA PENUH":10698020,"FTL KEMANG":11336641,"FTL MENTENG":14766328,"FTL KELAPA GADING":9373878,"FTL BINTARO":9047136},"total":122516608,"uploadedAt":"2026-04-16T08:12:12.222324"},"2026-04-11":{"byOutlet":{"FTL CIKARANG":10867102,"FTL CIPONDOH":10224401,"FTL CIREUNDEU":13138898,"FTL GANDARIA":14135563,"FTL PONDOK GEDE":16360999,"FTL EPICULTURA":11070564,"FTL SEMESTA PENUH":10921809,"FTL KEMANG":17200924,"FTL MENTENG":16421833,"FTL KELAPA GADING":15070170,"FTL BINTARO":12165801},"total":147578064,"uploadedAt":"2026-04-16T08:12:12.222326"},"2026-04-12":{"byOutlet":{"FTL CIKARANG":12401433,"FTL CIPONDOH":16538052,"FTL CIREUNDEU":14962801,"FTL GANDARIA":14652800,"FTL PONDOK GEDE":12053753,"FTL EPICULTURA":13234405,"FTL SEMESTA PENUH":8545871,"FTL KEMANG":17378659,"FTL MENTENG":18604966,"FTL KELAPA GADING":11579654,"FTL BINTARO":17462407},"total":157414801,"uploadedAt":"2026-04-16T08:12:12.222328"},"2026-04-13":{"byOutlet":{"FTL CIKARANG":11784809,"FTL CIPONDOH":9320545,"FTL CIREUNDEU":10264112,"FTL GANDARIA":16543913,"FTL PONDOK GEDE":8402231,"FTL EPICULTURA":8945078,"FTL SEMESTA PENUH":8522582,"FTL KEMANG":17653619,"FTL MENTENG":13071581,"FTL KELAPA GADING":13896034,"FTL BINTARO":11829243},"total":130233747,"uploadedAt":"2026-04-16T08:12:12.222330"},"2026-04-14":{"byOutlet":{"FTL CIKARANG":8672483,"FTL CIPONDOH":7784298,"FTL CIREUNDEU":11027431,"FTL GANDARIA":14465854,"FTL PONDOK GEDE":10187354,"FTL EPICULTURA":10715222,"FTL SEMESTA PENUH":11779443,"FTL KEMANG":17068897,"FTL MENTENG":9204174,"FTL KELAPA GADING":13931090,"FTL BINTARO":10516220},"total":125352466,"uploadedAt":"2026-04-16T08:12:12.222331"},"2026-04-15":{"byOutlet":{"FTL CIKARANG":9792444,"FTL CIPONDOH":7809313,"FTL CIREUNDEU":7074946,"FTL GANDARIA":14185743,"FTL PONDOK GEDE":9886767,"FTL EPICULTURA":12438025,"FTL SEMESTA PENUH":9304306,"FTL KEMANG":12475417,"FTL MENTENG":11566339,"FTL KELAPA GADING":9660222,"FTL BINTARO":11008970},"total":115202492,"uploadedAt":"2026-04-16T08:12:12.222338"}},"bank":{"2026-04-02":{"byOutlet":{"CIKARANG":6787999,"CIPONDOH":6253370,"CIREUNDEU":7536208,"GANDARIA":8467741,"PONDOK GEDE":11907193,"EPICULTURA":6209845,"SEMESTA PENUH":7666529,"KEMANG":10659285,"MENTENG":12612519,"KELAPA GADING":8126041,"BINTARO":8553526},"total":94780256,"uploadedAt":"2026-04-16T08:12:12.248678"},"2026-04-03":{"byOutlet":{"CIKARANG":8335880,"CIPONDOH":7074849,"CIREUNDEU":5508352,"GANDARIA":10504909,"PONDOK GEDE":7025680,"EPICULTURA":9286797,"SEMESTA PENUH":5521434,"KEMANG":10550483,"MENTENG":10189930,"KELAPA GADING":12451312,"BINTARO":7282375},"total":93732001,"uploadedAt":"2026-04-16T08:12:12.248700"},"2026-04-04":{"byOutlet":{"CIKARANG":9102453,"CIPONDOH":12385466,"CIREUNDEU":7007724,"GANDARIA":16811416,"PONDOK GEDE":12425560,"EPICULTURA":9324086,"SEMESTA PENUH":11317566,"KEMANG":16871457,"MENTENG":11950966,"KELAPA GADING":14810850,"BINTARO":9844606},"total":131852150,"uploadedAt":"2026-04-16T08:12:12.248705"},"2026-04-05":{"byOutlet":{"CIKARANG":12311204,"CIPONDOH":10675987,"CIREUNDEU":11933365,"GANDARIA":12193289,"PONDOK GEDE":11111786,"EPICULTURA":12788793,"SEMESTA PENUH":9448324,"KEMANG":16189302,"MENTENG":14162649,"KELAPA GADING":13833267,"BINTARO":14285640},"total":138933606,"uploadedAt":"2026-04-16T08:12:12.248709"},"2026-04-06":{"byOutlet":{"CIKARANG":9173750,"CIPONDOH":9276045,"CIREUNDEU":7372608,"GANDARIA":7997416,"PONDOK GEDE":11025039,"EPICULTURA":6998057,"SEMESTA PENUH":8972874,"KEMANG":14438698,"MENTENG":11448444,"KELAPA GADING":8186735,"BINTARO":8551963},"total":103441629,"uploadedAt":"2026-04-16T08:12:12.248713"},"2026-04-07":{"byOutlet":{"CIKARANG":8651563,"CIPONDOH":6181112,"CIREUNDEU":7783835,"GANDARIA":11353644,"PONDOK GEDE":8516636,"EPICULTURA":7039840,"SEMESTA PENUH":5605523,"KEMANG":12584063,"MENTENG":7576974,"KELAPA GADING":9241099,"BINTARO":7991474},"total":92525763,"uploadedAt":"2026-04-16T08:12:12.248716"},"2026-04-08":{"byOutlet":{"CIKARANG":9425986,"CIPONDOH":9563049,"CIREUNDEU":10045766,"GANDARIA":11760565,"PONDOK GEDE":12450758,"EPICULTURA":11302325,"SEMESTA PENUH":8097957,"KEMANG":10016925,"MENTENG":10402868,"KELAPA GADING":8230020,"BINTARO":11958180},"total":113254399,"uploadedAt":"2026-04-16T08:12:12.248720"},"2026-04-09":{"byOutlet":{"CIKARANG":8944749,"CIPONDOH":9708580,"CIREUNDEU":5720649,"GANDARIA":8635311,"PONDOK GEDE":7659061,"EPICULTURA":7409992,"SEMESTA PENUH":6819418,"KEMANG":10267544,"MENTENG":10105611,"KELAPA GADING":9638072,"BINTARO":7364828},"total":92273815,"uploadedAt":"2026-04-16T08:12:12.248724"},"2026-04-10":{"byOutlet":{"CIKARANG":6844348,"CIPONDOH":7646319,"CIREUNDEU":5943944,"GANDARIA":10485841,"PONDOK GEDE":6551367,"EPICULTURA":8946905,"SEMESTA PENUH":5538026,"KEMANG":13012338,"MENTENG":9925243,"KELAPA GADING":12915019,"BINTARO":8165208},"total":95974558,"uploadedAt":"2026-04-16T08:12:12.248727"},"2026-04-11":{"byOutlet":{"CIKARANG":11373511,"CIPONDOH":12130297,"CIREUNDEU":8967690,"GANDARIA":12449844,"PONDOK GEDE":12918459,"EPICULTURA":14166591,"SEMESTA PENUH":11582310,"KEMANG":14029682,"MENTENG":14757884,"KELAPA GADING":13923126,"BINTARO":10918712},"total":137218106,"uploadedAt":"2026-04-16T08:12:12.248731"},"2026-04-12":{"byOutlet":{"CIKARANG":9740373,"CIPONDOH":7759447,"CIREUNDEU":12368180,"GANDARIA":10192983,"PONDOK GEDE":12015220,"EPICULTURA":11195562,"SEMESTA PENUH":7340300,"KEMANG":15954445,"MENTENG":16243673,"KELAPA GADING":14626964,"BINTARO":11030185},"total":128467332,"uploadedAt":"2026-04-16T08:12:12.248735"},"2026-04-13":{"byOutlet":{"CIKARANG":7195584,"CIPONDOH":10869633,"CIREUNDEU":8085517,"GANDARIA":11703629,"PONDOK GEDE":11313659,"EPICULTURA":8124353,"SEMESTA PENUH":5485456,"KEMANG":9384102,"MENTENG":11510682,"KELAPA GADING":9227330,"BINTARO":11329601},"total":104229546,"uploadedAt":"2026-04-16T08:12:12.248738"},"2026-04-14":{"byOutlet":{"CIKARANG":10570904,"CIPONDOH":10898283,"CIREUNDEU":8844171,"GANDARIA":9683595,"PONDOK GEDE":11246654,"EPICULTURA":6155419,"SEMESTA PENUH":7599317,"KEMANG":14164065,"MENTENG":10588314,"KELAPA GADING":7996754,"BINTARO":9400637},"total":107148113,"uploadedAt":"2026-04-16T08:12:12.248742"},"2026-04-15":{"byOutlet":{"CIKARANG":9500017,"CIPONDOH":7718802,"CIREUNDEU":9967167,"GANDARIA":9908501,"PONDOK GEDE":8130508,"EPICULTURA":8784658,"SEMESTA PENUH":6135051,"KEMANG":10593371,"MENTENG":9889021,"KELAPA GADING":12641922,"BINTARO":7217881},"total":100486899,"uploadedAt":"2026-04-16T08:12:12.248746"}},"saldo":null,"admin":[{"__k":"FTL CIKARANG|2026-04-10|Selisih QRIS","outlet":"FTL CIKARANG","date":"2026-04-10","method":"QRIS","nominal":150000,"case":"Selisih QRIS","status":"OPEN"},{"__k":"FTL GANDARIA|2026-04-11|Kurang setor","outlet":"FTL GANDARIA","date":"2026-04-11","method":"CASH","nominal":75000,"case":"Kurang setor","status":"DONE"},{"__k":"FTL KEMANG|2026-04-12|Salah input nominal","outlet":"FTL KEMANG","date":"2026-04-12","method":"TRANSFER","nominal":250000,"case":"Salah input nominal","status":"OPEN"},{"__k":"FTL MENTENG|2026-04-13|Refund belum proses","outlet":"FTL MENTENG","date":"2026-04-13","method":"DEBIT","nominal":100000,"case":"Refund belum proses","status":"DONE"},{"__k":"FTL CIPONDOH|2026-04-14|Double charge","outlet":"FTL CIPONDOH","date":"2026-04-14","method":"QRIS","nominal":180000,"case":"Double charge","status":"OPEN"},{"__k":"FTL EPICULTURA|2026-04-14|Missing receipt","outlet":"FTL EPICULTURA","date":"2026-04-14","method":"CASH","nominal":120000,"case":"Missing receipt","status":"OPEN"}],"tax":null,"loan":null,"loanOut":null,"loanTotals":null,"meta":{"uploads":2,"lastUpload":"2026-04-16T08:12:12.248749"}}</script></head>
+</head>
 <body>
 
 <!-- ========== TOP NAV ========== -->
@@ -411,17 +413,17 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="gS" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#2B6DFF"></stop>
-            <stop offset="100%" stop-color="#7C3AED"></stop>
+            <stop offset="0%" stop-color="#2B6DFF"/>
+            <stop offset="100%" stop-color="#7C3AED"/>
           </linearGradient>
           <linearGradient id="gA" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#00B37A"></stop>
-            <stop offset="100%" stop-color="#5EEAB0"></stop>
+            <stop offset="0%" stop-color="#00B37A"/>
+            <stop offset="100%" stop-color="#5EEAB0"/>
           </linearGradient>
         </defs>
-        <path d="M32 6 L54 14 V32 C54 46 44 56 32 60 C20 56 10 46 10 32 V14 Z" fill="url(#gS)"></path>
-        <path d="M22 40 L30 32 L36 38 L46 24" stroke="url(#gA)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-        <circle cx="46" cy="24" r="3" fill="#F5B700"></circle>
+        <path d="M32 6 L54 14 V32 C54 46 44 56 32 60 C20 56 10 46 10 32 V14 Z" fill="url(#gS)"/>
+        <path d="M22 40 L30 32 L36 38 L46 24" stroke="url(#gA)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="46" cy="24" r="3" fill="#F5B700"/>
       </svg>
       <div class="logo-text">
         <span class="logo-name">Cashly</span>
@@ -434,25 +436,23 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
         <span id="liveLabel">LIVE</span>
       </div>
       <div class="storage-indicator" id="storageInd">
-        💾 <span id="storageDays">14</span> hari tersimpan
+        💾 <span id="storageDays">0</span> hari tersimpan
       </div>
-      <input type="file" id="balanceFileInput" accept=".xlsx" multiple="" style="display:none">
-      <input type="file" id="globalFileInput" accept=".xlsx" multiple="" style="display:none">
-      <button class="btn" id="btnUploadBalance" data-label="⬆ Upload Balance" onclick="onUploadBalanceClick()">
-        ⬆ Upload Balance
+      <button class="btn" id="btnSync" data-label="🔄 Sync Now" onclick="syncAllFromSheets()" title="Pull latest data from Google Sheets">
+        🔄 Sync Now
       </button>
-      <button class="btn" id="btnUploadData" data-label="⬆ Upload Data" onclick="document.getElementById('globalFileInput').click()" title="Upload DAILY PAYMENT / REV_ALLCLUB / BANK INCOME / OCBC / TAX">
-        ⬆ Upload Data
-      </button>
+      <div class="storage-indicator" id="syncStamp" title="Last successful sync">
+        ⏱ Last sync: —
+      </div>
       <button class="btn btn-ai" onclick="runAI()">
         ✨ AI Insight
       </button>
-      <button class="btn btn-primary" id="btnDownload" data-label="⬇ Download HTML" onclick="downloadDashboard()" data-orig="
+      <button class="btn btn-primary" id="btnDownload" data-label="⬇ Download HTML" onclick="downloadDashboard()">
         ⬇ Download HTML
-      " style="">⬇ Download HTML</button>
+      </button>
       <button class="btn" id="btnPDF" data-label="🖨 PDF" onclick="convertToPDF()">🖨 PDF</button>
       <div class="nav-user">
-        <span>📅</span><span id="navDate">2026-04-23</span>
+        <span>📅</span><span id="navDate">—</span>
       </div>
     </div>
   </div>
@@ -480,7 +480,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       </div>
       <div class="sb-item" data-mod="admin" onclick="goModule('admin')">
         <span class="sb-icon">⚠️</span><span>Admin Errors</span>
-        <span class="sb-badge" id="adminBadge">4</span>
+        <span class="sb-badge" id="adminBadge">0</span>
       </div>
       <div class="sb-item" data-mod="tax" onclick="goModule('tax')">
         <span class="sb-icon">🧾</span><span>Tax</span>
@@ -529,9 +529,9 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       </div>
       <div class="divider-v"></div>
       <span class="filter-label">Periode</span>
-      <input type="date" class="date-input" id="dateFrom">
+      <input type="date" class="date-input" id="dateFrom"/>
       <span style="color:var(--text-3);font-size:11px">→</span>
-      <input type="date" class="date-input" id="dateTo">
+      <input type="date" class="date-input" id="dateTo"/>
       <button class="btn" onclick="setPreset(7)" style="padding:6px 10px;font-size:11px">7D</button>
       <button class="btn" onclick="setPreset(30)" style="padding:6px 10px;font-size:11px">30D</button>
       <button class="btn" onclick="setPreset(999)" style="padding:6px 10px;font-size:11px">All</button>
@@ -545,7 +545,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
         </div>
       </div>
       <div style="margin-left:auto">
-        <span class="filter-label" id="filterSummary">All · 14 hari · 2026-04-02 → 2026-04-15</span>
+        <span class="filter-label" id="filterSummary"></span>
       </div>
     </div>
 
@@ -557,35 +557,35 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
         <div class="hero-grid">
           <div>
             <div class="hero-main-label">Total Cash Position · All Entities</div>
-            <div class="hero-main-value num" id="heroBal">Rp 0</div>
+            <div class="hero-main-value num" id="heroBal">—</div>
             <div class="hero-main-sub">
-              <span class="delta pos" id="heroDelta">+0.0%</span> vs kemarin · per <span id="heroDate">2026-04-23</span>
+              <span class="delta pos" id="heroDelta">—</span> vs kemarin · per <span id="heroDate">—</span>
             </div>
             <div class="balance-split">
               <div class="bs-cell">
                 <div class="bs-label">FTL</div>
-                <div class="bs-value num" id="heroBalFTL">Rp 0</div>
+                <div class="bs-value num" id="heroBalFTL">—</div>
               </div>
               <div class="bs-cell epic">
                 <div class="bs-label">EPIC</div>
-                <div class="bs-value num" id="heroBalEPIC">Rp 0</div>
+                <div class="bs-value num" id="heroBalEPIC">—</div>
               </div>
             </div>
             <div class="hero-meta">
               <div class="hero-mini">
                 <div class="hero-mini-label">↓ Cash In (hari ini)</div>
-                <div class="hero-mini-value pos num" id="heroIn">Rp 0</div>
-                <div class="hero-mini-sub" id="heroInSub">Bank Income · 2026-04-23</div>
+                <div class="hero-mini-value pos num" id="heroIn">—</div>
+                <div class="hero-mini-sub" id="heroInSub">Revenue + Bank Income</div>
               </div>
               <div class="hero-mini">
                 <div class="hero-mini-label">↑ Cash Out (hari ini)</div>
-                <div class="hero-mini-value neg num" id="heroOut">Rp 0</div>
-                <div class="hero-mini-sub" id="heroOutSub">Daily Payment · 2026-04-23</div>
+                <div class="hero-mini-value neg num" id="heroOut">—</div>
+                <div class="hero-mini-sub" id="heroOutSub">AP + Tax + Loan</div>
               </div>
               <div class="hero-mini">
                 <div class="hero-mini-label">💰 Revenue Yesterday</div>
-                <div class="hero-mini-value pos num" id="heroRevYesterday">Rp 0</div>
-                <div class="hero-mini-sub" id="heroRevYesterdaySub">REV_ALLCLUB · 2026-04-22</div>
+                <div class="hero-mini-value pos num" id="heroRevYesterday">—</div>
+                <div class="hero-mini-sub" id="heroRevYesterdaySub">Bank Income · kemarin</div>
               </div>
             </div>
           </div>
@@ -594,11 +594,11 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <span class="ai-pulse-dot"></span>
               <span>AI Narrative</span>
             </div>
-            <div class="ai-headline" id="aiHead">Cash flow positif Rp 1.53 M selama 14 hari</div>
-            <div class="ai-narration" id="aiNarr">Revenue melebihi pengeluaran. Saldo tumbuh naturally.</div>
+            <div class="ai-headline" id="aiHead">Memuat insight…</div>
+            <div class="ai-narration" id="aiNarr">Upload data terkini untuk melihat analisa AI.</div>
             <div class="ai-suggestion">
               <span>💡</span>
-              <span id="aiSug">Pertimbangkan alokasi ke deposito atau investasi jangka pendek untuk optimasi yield.</span>
+              <span id="aiSug">Rekomendasi akan muncul setelah data diupload.</span>
             </div>
           </div>
         </div>
@@ -611,23 +611,23 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
             <div class="kpi-label">Revenue (Bank Income)</div>
             <div class="kpi-icon">💰</div>
           </div>
-          <div class="kpi-value num" id="kpiRev">Rp 1.53 M</div>
-          <div class="kpi-sub"><span class="mini-badge up" id="kpiRevDelta">14 hari</span> periode aktif</div>
+          <div class="kpi-value num" id="kpiRev">—</div>
+          <div class="kpi-sub"><span class="mini-badge up" id="kpiRevDelta">—</span> periode aktif</div>
         </div>
         <div class="kpi trust">
           <div class="kpi-head">
             <div class="kpi-label">Cash Out (Daily Payment)</div>
             <div class="kpi-icon">💸</div>
           </div>
-          <div class="kpi-value num" id="kpiOut">Rp 0</div>
-          <div class="kpi-sub"><span id="kpiOutDelta">0</span> outlet aktif</div>
+          <div class="kpi-value num" id="kpiOut">—</div>
+          <div class="kpi-sub"><span id="kpiOutDelta">—</span> outlet aktif</div>
         </div>
         <div class="kpi ai">
           <div class="kpi-head">
             <div class="kpi-label">Saldo Closing</div>
             <div class="kpi-icon">🏦</div>
           </div>
-          <div class="kpi-value num" id="kpiBal">Rp 0</div>
+          <div class="kpi-value num" id="kpiBal">—</div>
           <div class="kpi-sub"><span id="kpiBalDelta">—</span> total saldo siap pakai</div>
         </div>
         <div class="kpi alert">
@@ -635,8 +635,8 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
             <div class="kpi-label">Admin Errors</div>
             <div class="kpi-icon">⚠️</div>
           </div>
-          <div class="kpi-value num" id="kpiErr">4</div>
-          <div class="kpi-sub"><span id="kpiErrDelta">6 total</span> open case</div>
+          <div class="kpi-value num" id="kpiErr">—</div>
+          <div class="kpi-sub"><span id="kpiErrDelta">—</span> open case</div>
         </div>
       </div>
 
@@ -653,7 +653,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="mini-tab" onclick="setTrendView('cumulative',this)">Kumulatif</div>
             </div>
           </div>
-          <div class="chart-wrap"><canvas id="chTrend" style="box-sizing: border-box; display: block; height: 280px; width: 905px;" width="1357" height="420"></canvas></div>
+          <div class="chart-wrap"><canvas id="chTrend"></canvas></div>
         </div>
         <div class="card">
           <div class="card-head">
@@ -662,7 +662,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">Revenue share per entity</div>
             </div>
           </div>
-          <div class="chart-wrap"><canvas id="chDonut" style="box-sizing: border-box; display: block; height: 280px; width: 905px;" width="1357" height="420"></canvas></div>
+          <div class="chart-wrap"><canvas id="chDonut"></canvas></div>
         </div>
       </div>
 
@@ -675,7 +675,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">REV_ALLCLUB · periode aktif</div>
             </div>
           </div>
-          <div class="chart-wrap"><canvas id="chTopRev" style="box-sizing: border-box; display: block; height: 280px; width: 905px;" width="1357" height="420"></canvas></div>
+          <div class="chart-wrap"><canvas id="chTopRev"></canvas></div>
         </div>
         <div class="card">
           <div class="card-head">
@@ -684,7 +684,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">BCA · BRI · Mandiri · OCBC · BJB · Xendit</div>
             </div>
           </div>
-          <div class="chart-wrap"><canvas id="chBanks" style="box-sizing: border-box; display: block; height: 280px; width: 905px;" width="1357" height="420"></canvas></div>
+          <div class="chart-wrap"><canvas id="chBanks"></canvas></div>
         </div>
       </div>
 
@@ -696,7 +696,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
             <div class="card-sub">SOURCE DATA ALL · group by Col E · periode aktif</div>
           </div>
         </div>
-        <div class="payment-methods" id="pmBreakdown"><div class="empty">Belum ada data Bank Income.</div></div>
+        <div class="payment-methods" id="pmBreakdown"></div>
       </div>
 
       <!-- AI INSIGHT / ALERTS / RISK -->
@@ -708,25 +708,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">What · Why · Do</div>
             </div>
           </div>
-          <div id="insightList">
-    <div class="insight-item">
-      <div class="insight-head"><span class="insight-tag tag-what">What</span><span class="insight-title">Cash flow positif Rp 1.53 M selama 14 hari</span></div>
-      <div class="insight-body" style="margin-bottom:8px"><span class="insight-tag tag-why" style="margin-right:6px">Why</span>Revenue melebihi pengeluaran. Saldo tumbuh naturally.</div>
-      <div class="insight-body"><span class="insight-tag tag-do" style="margin-right:6px">Do</span>Pertimbangkan alokasi ke deposito atau investasi jangka pendek untuk optimasi yield.</div>
-    </div>
-  
-    <div class="insight-item">
-      <div class="insight-head"><span class="insight-tag tag-what">What</span><span class="insight-title">Runway cash: 999 hari</span></div>
-      <div class="insight-body" style="margin-bottom:8px"><span class="insight-tag tag-why" style="margin-right:6px">Why</span>Runway sangat nyaman, lebih dari 2 bulan.</div>
-      <div class="insight-body"><span class="insight-tag tag-do" style="margin-right:6px">Do</span>Alokasi idle cash ke treasury produk untuk optimasi return.</div>
-    </div>
-  
-    <div class="insight-item">
-      <div class="insight-head"><span class="insight-tag tag-what">What</span><span class="insight-title">FTL Pusat kontribusi 41% dari total revenue</span></div>
-      <div class="insight-body" style="margin-bottom:8px"><span class="insight-tag tag-why" style="margin-right:6px">Why</span>Distribusi revenue antar entity cukup seimbang.</div>
-      <div class="insight-body"><span class="insight-tag tag-do" style="margin-right:6px">Do</span>Pertahankan mix saat ini; optimalkan outlet dengan growth tertinggi.</div>
-    </div>
-  </div>
+          <div id="insightList"></div>
         </div>
         <div class="card">
           <div class="card-head">
@@ -735,13 +717,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">Items requiring attention</div>
             </div>
           </div>
-          <div class="alert-list" id="alertList">
-    <div class="alert-row">
-      <div class="alert-dot low"></div>
-      <div class="alert-text">4 admin case open</div>
-      <div class="alert-meta">now</div>
-    </div>
-  </div>
+          <div class="alert-list" id="alertList"></div>
         </div>
         <div class="card">
           <div class="card-head">
@@ -750,26 +726,10 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
               <div class="card-sub">3-dimensional signal</div>
             </div>
           </div>
-          <div class="risk-grid" id="riskGrid">
-    <div class="risk-cell good">
-      <div class="risk-label">Liquidity</div>
-      <div class="risk-value">Sehat</div>
-      <div class="risk-desc">Ratio 0%</div>
-    </div>
-  
-    <div class="risk-cell good">
-      <div class="risk-label">Runway</div>
-      <div class="risk-value">Aman</div>
-      <div class="risk-desc">999 hari</div>
-    </div>
-  
-    <div class="risk-cell warn">
-      <div class="risk-label">Ops Risk</div>
-      <div class="risk-value">Sedang</div>
-      <div class="risk-desc">4 open case</div>
-    </div>
-  </div>
-          <div style="margin-top:14px;padding:12px;background:var(--bg-2);border-radius:10px;font-size:11px;color:var(--text-2);line-height:1.6" id="riskNote">Semua dimensi risk dalam kondisi terkendali.</div>
+          <div class="risk-grid" id="riskGrid"></div>
+          <div style="margin-top:14px;padding:12px;background:var(--bg-2);border-radius:10px;font-size:11px;color:var(--text-2);line-height:1.6" id="riskNote">
+            Risk score dihitung dari rasio cash out / cash in, runway, dan error admin.
+          </div>
         </div>
       </div>
 
@@ -780,35 +740,32 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       <div class="section-head">
         <div>
           <div class="section-title">💸 AP — Cash Out per Outlet</div>
-          <div class="section-sub">Daily payment tracking · filter by date &amp; entity</div>
+          <div class="section-sub">Daily payment tracking · filter by date & entity</div>
         </div>
-        <div style="display:flex;gap:8px">
-          <input type="file" id="fileAP" accept=".xlsx" style="display:none" onchange="importFile('ap',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileAP').click()">⬆ Import DAILY PAYMENT</button>
-        </div>
+        <div class="sync-pill" title="Live synced from Google Sheets · DAILY PAYMENT">🔄 Synced from Google Sheets</div>
       </div>
-      <div class="upload-zone" id="upAP">
+      <div class="upload-zone ok" id="upAP" style="opacity:.7">
         <div class="upload-icon">📄</div>
-        <div class="upload-text"><strong>DAILY_PAYMENT_<date>.xlsx</date></strong>Import file pembayaran harian — auto-parse sheet SUMARY &amp; SUMMARY PER OUTLET</div>
+        <div class="upload-text"><strong>DAILY PAYMENT · Google Sheet</strong>Sheets PUSAT · API · PARTNERS · INVESTORS · STRIDE · EPIC</div>
       </div>
       <div class="kpi-grid" style="margin-top:16px">
-        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Total Cash Out</div><div class="kpi-icon">💸</div></div><div class="kpi-value num" id="apTotal">Rp 0</div><div class="kpi-sub">periode aktif</div></div>
-        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">Average / Outlet</div><div class="kpi-icon">📊</div></div><div class="kpi-value num" id="apAvg">Rp 0</div><div class="kpi-sub">rata-rata</div></div>
+        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Total Cash Out</div><div class="kpi-icon">💸</div></div><div class="kpi-value num" id="apTotal">—</div><div class="kpi-sub">periode aktif</div></div>
+        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">Average / Outlet</div><div class="kpi-icon">📊</div></div><div class="kpi-value num" id="apAvg">—</div><div class="kpi-sub">rata-rata</div></div>
         <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">Biggest Payer</div><div class="kpi-icon">🏆</div></div><div class="kpi-value" id="apTop" style="font-size:16px">—</div><div class="kpi-sub" id="apTopVal">—</div></div>
       </div>
       <div class="grid-2" style="margin-top:16px">
         <div class="card">
           <div class="card-head"><div><div class="card-title">Trend Cash Out</div><div class="card-sub">Harian</div></div></div>
-          <div class="chart-wrap"><canvas id="chAPTrend" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chAPTrend"></canvas></div>
         </div>
         <div class="card">
           <div class="card-head"><div><div class="card-title">By Entity</div></div></div>
-          <div class="chart-wrap"><canvas id="chAPEntity" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chAPEntity"></canvas></div>
         </div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Cash Out per Outlet</div></div></div>
-        <div class="tbl-wrap"><table class="tbl" id="tblAP"><thead><tr><th>Outlet</th><th>Entity</th><th style="text-align:right">Nominal</th><th style="text-align:right">% Share</th></tr></thead><tbody><tr><td colspan="4" class="empty">Belum ada data AP.</td></tr></tbody></table></div>
+        <div class="tbl-wrap"><table class="tbl" id="tblAP"><thead><tr><th>Outlet</th><th>Entity</th><th style="text-align:right">Nominal</th><th style="text-align:right">% Share</th></tr></thead><tbody></tbody></table></div>
       </div>
     </div>
 
@@ -819,36 +776,31 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
           <div class="section-title">💰 AR — Revenue Tracking</div>
           <div class="section-sub">Revenue → REV_ALLCLUB · SUMMARY (pivot per tanggal) · Bank Income → SUMMARY DAILY</div>
         </div>
-        <div style="display:flex;gap:8px">
-          <input type="file" id="fileAR1" accept=".xlsx" style="display:none" onchange="importFile('rev',this.files)">
-          <input type="file" id="fileAR2" accept=".xlsx" style="display:none" onchange="importFile('bank',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileAR1').click()">⬆ Import REV_ALLCLUB</button>
-          <button class="btn" onclick="document.getElementById('fileAR2').click()">⬆ Import BANK INCOME</button>
-        </div>
+        <div class="sync-pill" title="Live synced from Google Sheets · REV_ALLCLUB + Bank Income">🔄 Synced from Google Sheets</div>
       </div>
       <div class="grid-2" style="margin-bottom:16px">
-        <div class="upload-zone ok" id="upREV"><div class="upload-icon">💰</div><div class="upload-text"><strong>REV_ALLCLUB_<date>.xlsx</date></strong>Revenue per outlet (SUMMARY sheet · pivot per tanggal)</div></div>
-        <div class="upload-zone ok" id="upBANK"><div class="upload-icon">🏦</div><div class="upload-text"><strong>Bank_Income_<date>.xlsx</date></strong>Cash in non-Xendit (SUMMARY DAILY)</div></div>
+        <div class="upload-zone ok" id="upREV" style="opacity:.7"><div class="upload-icon">💰</div><div class="upload-text"><strong>REV_ALLCLUB · Google Sheet</strong>SUMMARY · Daily Case AR · Daily Case Admin</div></div>
+        <div class="upload-zone ok" id="upBANK" style="opacity:.7"><div class="upload-icon">🏦</div><div class="upload-text"><strong>Bank Income · Google Sheet</strong>SOURCE DATA ALL · SUMMARY DAILY</div></div>
       </div>
       <div class="kpi-grid">
-        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Revenue</div><div class="kpi-icon">💰</div></div><div class="kpi-value num" id="arTotal">Rp 0</div><div class="kpi-sub"><span id="arDelta">—</span></div></div>
-        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">Avg / Day</div><div class="kpi-icon">📅</div></div><div class="kpi-value num" id="arAvgDay">Rp 0</div><div class="kpi-sub">harian</div></div>
+        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Revenue</div><div class="kpi-icon">💰</div></div><div class="kpi-value num" id="arTotal">—</div><div class="kpi-sub"><span id="arDelta">—</span></div></div>
+        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">Avg / Day</div><div class="kpi-icon">📅</div></div><div class="kpi-value num" id="arAvgDay">—</div><div class="kpi-sub">harian</div></div>
         <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">Best Day</div><div class="kpi-icon">🌟</div></div><div class="kpi-value" id="arBestDay" style="font-size:16px">—</div><div class="kpi-sub" id="arBestVal">—</div></div>
         <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">Best Outlet</div><div class="kpi-icon">🏆</div></div><div class="kpi-value" id="arBestOutlet" style="font-size:16px">—</div><div class="kpi-sub" id="arBestOutletVal">—</div></div>
       </div>
       <div class="grid-2" style="margin-top:16px">
         <div class="card">
           <div class="card-head"><div><div class="card-title">Revenue Trend</div><div class="card-sub">Harian · REV_ALLCLUB</div></div></div>
-          <div class="chart-wrap"><canvas id="chARTrend" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chARTrend"></canvas></div>
         </div>
         <div class="card">
           <div class="card-head"><div><div class="card-title">Revenue by Entity</div></div></div>
-          <div class="chart-wrap"><canvas id="chAREntity" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chAREntity"></canvas></div>
         </div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Bank Income · List per Sub Bagian</div><div class="card-sub" id="biSubDateSub">SUMMARY DAILY · tanggal terakhir periode aktif</div></div></div>
-        <div class="payment-methods" id="biSubBreakdown"><div class="empty">Belum ada data Bank Income (SUMMARY DAILY). Import BANK INCOME.</div></div>
+        <div class="payment-methods" id="biSubBreakdown"></div>
       </div>
       <div class="grid-2" style="margin-top:16px">
         <div class="card">
@@ -857,12 +809,12 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
         </div>
         <div class="card">
           <div class="card-head"><div><div class="card-title">Bank Income · Perbandingan Harian</div><div class="card-sub" id="biDailyCmpSub">Tanggal terakhir vs hari sebelumnya</div></div></div>
-          <div id="biDailyCmp" style="padding:6px 0"><div class="empty">Belum ada data untuk perbandingan harian.</div></div>
+          <div id="biDailyCmp" style="padding:6px 0"></div>
         </div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Revenue per Outlet</div></div></div>
-        <div class="tbl-wrap"><table class="tbl" id="tblAR"><thead><tr><th>Outlet</th><th>Entity</th><th style="text-align:right">Total</th><th style="text-align:right">Avg/hari</th><th style="text-align:right">% Share</th></tr></thead><tbody><tr><td colspan="5" class="empty">Belum ada data revenue. Import REV_ALLCLUB.</td></tr></tbody></table></div>
+        <div class="tbl-wrap"><table class="tbl" id="tblAR"><thead><tr><th>Outlet</th><th>Entity</th><th style="text-align:right">Total</th><th style="text-align:right">Avg/hari</th><th style="text-align:right">% Share</th></tr></thead><tbody></tbody></table></div>
       </div>
     </div>
 
@@ -875,78 +827,24 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
         </div>
       </div>
       <div class="kpi-grid">
-        <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">Total Cases</div><div class="kpi-icon">⚠️</div></div><div class="kpi-value num" id="admTotal">6</div><div class="kpi-sub">all-time</div></div>
-        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">Open Cases</div><div class="kpi-icon">🔓</div></div><div class="kpi-value num" id="admOpen">4</div><div class="kpi-sub">belum DONE</div></div>
-        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Resolved</div><div class="kpi-icon">✅</div></div><div class="kpi-value num" id="admDone">2</div><div class="kpi-sub">DONE</div></div>
-        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">Top Error Outlet</div><div class="kpi-icon">🏷</div></div><div class="kpi-value" id="admTopOutlet" style="font-size:16px">FTL CIKARANG</div><div class="kpi-sub" id="admTopCount">1 cases</div></div>
+        <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">Total Cases</div><div class="kpi-icon">⚠️</div></div><div class="kpi-value num" id="admTotal">—</div><div class="kpi-sub">all-time</div></div>
+        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">Open Cases</div><div class="kpi-icon">🔓</div></div><div class="kpi-value num" id="admOpen">—</div><div class="kpi-sub">belum DONE</div></div>
+        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Resolved</div><div class="kpi-icon">✅</div></div><div class="kpi-value num" id="admDone">—</div><div class="kpi-sub">DONE</div></div>
+        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">Top Error Outlet</div><div class="kpi-icon">🏷</div></div><div class="kpi-value" id="admTopOutlet" style="font-size:16px">—</div><div class="kpi-sub" id="admTopCount">—</div></div>
       </div>
       <div class="grid-2" style="margin-top:16px">
         <div class="card">
           <div class="card-head"><div><div class="card-title">Errors per Outlet</div></div></div>
-          <div class="chart-wrap"><canvas id="chAdmOutlet" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chAdmOutlet"></canvas></div>
         </div>
         <div class="card">
           <div class="card-head"><div><div class="card-title">Errors by Status</div></div></div>
-          <div class="chart-wrap"><canvas id="chAdmStatus" width="1357" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 905px;"></canvas></div>
+          <div class="chart-wrap"><canvas id="chAdmStatus"></canvas></div>
         </div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Daily Case List</div></div></div>
-        <div class="tbl-wrap"><table class="tbl" id="tblAdm"><thead><tr><th>Outlet</th><th>Tanggal</th><th>Method</th><th style="text-align:right">Nominal</th><th>Case</th><th>Status</th></tr></thead><tbody>
-    <tr>
-      <td>FTL CIKARANG</td>
-      <td>2026-04-10</td>
-      <td>QRIS</td>
-      <td class="num">Rp 150.000</td>
-      <td style="max-width:360px">Selisih QRIS</td>
-      <td><span class="pill par" style="background:var(--alert-soft);color:var(--alert)">OPEN</span></td>
-    </tr>
-  
-    <tr>
-      <td>FTL GANDARIA</td>
-      <td>2026-04-11</td>
-      <td>CASH</td>
-      <td class="num">Rp 75.000</td>
-      <td style="max-width:360px">Kurang setor</td>
-      <td><span class="pill pus" style="background:var(--cash-soft);color:var(--cash)">DONE</span></td>
-    </tr>
-  
-    <tr>
-      <td>FTL KEMANG</td>
-      <td>2026-04-12</td>
-      <td>TRANSFER</td>
-      <td class="num">Rp 250.000</td>
-      <td style="max-width:360px">Salah input nominal</td>
-      <td><span class="pill par" style="background:var(--alert-soft);color:var(--alert)">OPEN</span></td>
-    </tr>
-  
-    <tr>
-      <td>FTL MENTENG</td>
-      <td>2026-04-13</td>
-      <td>DEBIT</td>
-      <td class="num">Rp 100.000</td>
-      <td style="max-width:360px">Refund belum proses</td>
-      <td><span class="pill pus" style="background:var(--cash-soft);color:var(--cash)">DONE</span></td>
-    </tr>
-  
-    <tr>
-      <td>FTL CIPONDOH</td>
-      <td>2026-04-14</td>
-      <td>QRIS</td>
-      <td class="num">Rp 180.000</td>
-      <td style="max-width:360px">Double charge</td>
-      <td><span class="pill par" style="background:var(--alert-soft);color:var(--alert)">OPEN</span></td>
-    </tr>
-  
-    <tr>
-      <td>FTL EPICULTURA</td>
-      <td>2026-04-14</td>
-      <td>CASH</td>
-      <td class="num">Rp 120.000</td>
-      <td style="max-width:360px">Missing receipt</td>
-      <td><span class="pill par" style="background:var(--alert-soft);color:var(--alert)">OPEN</span></td>
-    </tr>
-  </tbody></table></div>
+        <div class="tbl-wrap"><table class="tbl" id="tblAdm"><thead><tr><th>Outlet</th><th>Tanggal</th><th>Method</th><th style="text-align:right">Nominal</th><th>Case</th><th>Status</th></tr></thead><tbody></tbody></table></div>
       </div>
     </div>
 
@@ -955,24 +853,21 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       <div class="section-head">
         <div>
           <div class="section-title">🧾 Tax Module</div>
-          <div class="section-sub">PB1, UMKM, PPh21, PPh23, PPh4(2) — filter by outlet &amp; period</div>
+          <div class="section-sub">PB1, UMKM, PPh21, PPh23, PPh4(2) — filter by outlet & period</div>
         </div>
-        <div style="display:flex;gap:8px">
-          <input type="file" id="fileTax" accept=".xlsx" style="display:none" onchange="importFile('tax',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileTax').click()">⬆ Import Tax File</button>
-        </div>
+        <div class="sync-pill" title="Tax source not yet wired to Google Sheets">—</div>
       </div>
-      <div class="upload-zone" id="upTAX"><div class="upload-icon">🧾</div><div class="upload-text"><strong>Tax_<period>.xlsx</period></strong>Upload file pajak — format: Outlet, Period, PB1, UMKM, PPh21, PPh23, PPh42</div></div>
+      <div class="upload-zone" id="upTAX" style="opacity:.6"><div class="upload-icon">🧾</div><div class="upload-text"><strong>Tax · Google Sheet (TBD)</strong>Tax source belum di-link ke Google Sheet. Tambahkan ID ke GSHEETS.tax saat siap.</div></div>
       <div class="kpi-grid" style="margin-top:16px">
-        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">PB1</div><div class="kpi-icon">📘</div></div><div class="kpi-value num" id="taxPB1">Rp 0</div><div class="kpi-sub">Pajak Hotel/Restoran</div></div>
-        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">UMKM 0.5%</div><div class="kpi-icon">📗</div></div><div class="kpi-value num" id="taxUMKM">Rp 0</div><div class="kpi-sub">Final</div></div>
-        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">PPh 21</div><div class="kpi-icon">👤</div></div><div class="kpi-value num" id="taxPPH21">Rp 0</div><div class="kpi-sub">Karyawan</div></div>
-        <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">PPh 23 + PPh 4(2)</div><div class="kpi-icon">🧾</div></div><div class="kpi-value num" id="taxPPH23">Rp 0</div><div class="kpi-sub">Jasa + Sewa</div></div>
+        <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">PB1</div><div class="kpi-icon">📘</div></div><div class="kpi-value num" id="taxPB1">—</div><div class="kpi-sub">Pajak Hotel/Restoran</div></div>
+        <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">UMKM 0.5%</div><div class="kpi-icon">📗</div></div><div class="kpi-value num" id="taxUMKM">—</div><div class="kpi-sub">Final</div></div>
+        <div class="kpi ai"><div class="kpi-head"><div class="kpi-label">PPh 21</div><div class="kpi-icon">👤</div></div><div class="kpi-value num" id="taxPPH21">—</div><div class="kpi-sub">Karyawan</div></div>
+        <div class="kpi alert"><div class="kpi-head"><div class="kpi-label">PPh 23 + PPh 4(2)</div><div class="kpi-icon">🧾</div></div><div class="kpi-value num" id="taxPPH23">—</div><div class="kpi-sub">Jasa + Sewa</div></div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Tax Breakdown per Outlet</div></div></div>
         <div class="tbl-wrap"><table class="tbl" id="tblTax"><thead><tr><th>Outlet</th><th>Period</th><th style="text-align:right">PB1</th><th style="text-align:right">UMKM</th><th style="text-align:right">PPh21</th><th style="text-align:right">PPh23</th><th style="text-align:right">PPh4(2)</th><th style="text-align:right">Total</th></tr></thead><tbody></tbody></table></div>
-        <div class="empty" id="taxEmpty" style="display: block;">🧾<br>Belum ada data pajak. Upload file untuk memulai.</div>
+        <div class="empty" id="taxEmpty">🧾<br/>Belum ada data pajak. Upload file untuk memulai.</div>
       </div>
     </div>
 
@@ -983,12 +878,9 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
           <div class="section-title">🏦 Treasury Cash</div>
           <div class="section-sub">BCA Tebet Timur Makmur · Kali Menteng Sukses · extracted dari SALDO CLOSING</div>
         </div>
-        <div style="display:flex;gap:8px">
-          <input type="file" id="fileSC" accept=".xlsx" style="display:none" onchange="importFile('saldo',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileSC').click()">⬆ Import SALDO CLOSING</button>
-        </div>
+        <div class="sync-pill" title="Live synced from Google Sheets · saldo closing">🔄 Synced from Google Sheets</div>
       </div>
-      <div class="upload-zone" id="upSALDO"><div class="upload-icon">🏦</div><div class="upload-text"><strong>saldo_closing_<date>.xlsx</date></strong>Semua saldo rekening, auto-detect EPICULTURA ("Semesta Penuh..."), treasury accounts, dan loan OCBC</div></div>
+      <div class="upload-zone ok" id="upSALDO" style="opacity:.7"><div class="upload-icon">🏦</div><div class="upload-text"><strong>Saldo Closing · Google Sheet</strong>Sheet: Summary Opening · BCA / BRI / Mandiri / OCBC / BJB / Xendit</div></div>
       <div class="kpi-grid" style="margin-top:16px">
         <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Treasury Cash Total</div><div class="kpi-icon">💵</div></div><div class="kpi-value num" id="trTotal">—</div><div class="kpi-sub">BCA TTM + KMS</div></div>
         <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">BCA Tebet Timur Makmur</div><div class="kpi-icon">🏦</div></div><div class="kpi-value num" id="trTTM">—</div><div class="kpi-sub">Treasury A</div></div>
@@ -1003,14 +895,14 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
 
     <!-- ==================== SECTION: OBLIGASI ==================== -->
     <div class="section" id="sec-obligasi">
-      <div class="section-head"><div><div class="section-title">📜 Obligasi</div><div class="section-sub">Portfolio obligasi · track maturity &amp; yield</div></div></div>
-      <div class="card"><div class="empty">📜<br>Belum ada data obligasi. Upload via sheet TREASURY pada SALDO CLOSING atau import file obligasi terpisah.</div></div>
+      <div class="section-head"><div><div class="section-title">📜 Obligasi</div><div class="section-sub">Portfolio obligasi · track maturity & yield</div></div></div>
+      <div class="card"><div class="empty">📜<br/>Belum ada data obligasi. Upload via sheet TREASURY pada SALDO CLOSING atau import file obligasi terpisah.</div></div>
     </div>
 
     <!-- ==================== SECTION: DEPOSITO ==================== -->
     <div class="section" id="sec-deposito">
-      <div class="section-head"><div><div class="section-title">🔒 Deposito</div><div class="section-sub">Time deposit · tenor &amp; interest tracking</div></div></div>
-      <div class="card"><div class="empty">🔒<br>Belum ada data deposito. Upload file untuk melihat portfolio.</div></div>
+      <div class="section-head"><div><div class="section-title">🔒 Deposito</div><div class="section-sub">Time deposit · tenor & interest tracking</div></div></div>
+      <div class="card"><div class="empty">🔒<br/>Belum ada data deposito. Upload file untuk melihat portfolio.</div></div>
     </div>
 
     <!-- ==================== SECTION: LOAN ==================== -->
@@ -1018,16 +910,11 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       <div class="section-head">
         <div>
           <div class="section-title">💳 Loan / OCBC Tracking</div>
-          <div class="section-sub">Auto-detect drawdown &amp; repayment · outstanding per loan</div>
+          <div class="section-sub">Auto-detect drawdown & repayment · outstanding per loan</div>
         </div>
-        <div style="display:flex;gap:8px">
-          <input type="file" id="fileOCBCCheck" accept=".xlsx" style="display:none" onchange="importFile('ocbc_check',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileOCBCCheck').click()">⬆ Import Checking Payment</button>
-          <input type="file" id="fileOCBCUsage" accept=".xlsx" style="display:none" onchange="importFile('ocbc_usage',this.files)">
-          <button class="btn btn-primary" onclick="document.getElementById('fileOCBCUsage').click()">⬆ Import Usage Report</button>
-        </div>
+        <div class="sync-pill" title="Live synced from Google Sheets · Check Payment + LIST PENGGUNAAN">🔄 Synced from Google Sheets</div>
       </div>
-      <div class="upload-zone" id="upOCBC" style="display:none"></div>
+      <div class="upload-zone ok" id="upOCBC" style="display:none"></div>
       <div class="kpi-grid" style="margin-top:16px">
         <div class="kpi trust"><div class="kpi-head"><div class="kpi-label">Drawdown (periode)</div><div class="kpi-icon">↓</div></div><div class="kpi-value num" id="loanDraw">—</div><div class="kpi-sub">cash masuk dari bank</div></div>
         <div class="kpi cash"><div class="kpi-head"><div class="kpi-label">Repayment (periode)</div><div class="kpi-icon">↑</div></div>
@@ -2315,7 +2202,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
     <td class="num pos">Rp 10 rb</td>
     <td class="num">Rp 544 rb</td></tr>
         </tbody></table></div>
-        <div class="empty" id="loanEmpty" style="display:none">💳<br>Belum ada data loan. Upload OCBC statement untuk auto-detect drawdown &amp; repayment.</div>
+        <div class="empty" id="loanEmpty" style="display:none">💳<br/>Belum ada data loan. Upload OCBC statement untuk auto-detect drawdown & repayment.</div>
       </div>
     </div>
 
@@ -2325,7 +2212,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:12px}
       <div class="card">
         <div class="card-head"><div><div class="card-title">Snapshot per Tanggal</div><div class="card-sub">Klik tanggal untuk load snapshot</div></div></div>
         <div class="tbl-wrap"><table class="tbl" id="tblHist"><thead><tr><th>Tanggal Data</th><th>AP</th><th>AR</th><th>Bank</th><th>Saldo</th><th>Loan</th><th>Upload Terakhir</th><th>Action</th></tr></thead><tbody></tbody></table></div>
-        <div class="empty" id="histEmpty">🕐<br>Belum ada snapshot. Upload data pertama untuk memulai historical tracking.</div>
+        <div class="empty" id="histEmpty">🕐<br/>Belum ada snapshot. Upload data pertama untuk memulai historical tracking.</div>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="card-head"><div><div class="card-title">Storage Stats</div></div></div>
@@ -2650,6 +2537,111 @@ async function readXLSX(file){
   // That way excelSerialToISO() (pure arithmetic) is the ONLY path that
   // converts serials to Y-M-D, which is completely timezone-independent.
   return XLSX.read(buf, {type:'array'});
+}
+
+/* ========================================================================
+   GOOGLE SHEETS FETCH LAYER
+   Live data source — replaces manual upload.
+   Pulls each tab via gviz/tq CSV endpoint (CORS-friendly, per-tab),
+   then assembles a SheetJS workbook that the existing importers consume
+   unchanged via a File-like wrapper (keeps filename validations intact).
+   ======================================================================== */
+const GSHEETS = {
+  saldo:          {id:'1DmIO7cA_jSkf3grEVpj8eSe9new6rObuvVEFZ2feeAg', tabs:['Summary Opening'],                                                        virtualName:'saldo closing gsheet.xlsx'},
+  dailyPayment:   {id:'1lJgzVBPn5vYmWzoosulEEfg6W5FoULaLPFQewk3A0Rc', tabs:['PUSAT','API','PARTNERS','INVESTOR','STRIDE','EPIC'],                     virtualName:'DAILY PAYMENT gsheet.xlsx'},
+  revAllClub:     {id:'1jFOCmQVXrF0aGkkvf7EI-bl2F9AYYom0EMUA8xs4GN8', tabs:['SUMMARY','Daily Case AR','Daily Case Admin (Operational)'],              virtualName:'REV_ALLCLUB gsheet.xlsx'},
+  bankIncome:     {id:'1Lw12HV0BLDa2hbNtkaNS6AhJeyuv9QZMf9g6okKhMfs', tabs:['SOURCE DATA ALL','SUMMARY DAILY'],                                        virtualName:'Bank_Income gsheet.xlsx'},
+  checkPayment:   {id:'1DvEcTONdxwmMEn5PTjUdBjSlEmVMm_F8MTVLhC8qrYM', tabs:['Outstanding Loan'],                                                       virtualName:'Check Payment Bank Loan OCBC gsheet.xlsx'},
+  listPenggunaan: {id:'1M0RJ1OiNRRtJ2qVaj8TRXTXwyaJ2h91Kz-a97XfzIaQ', tabs:['Sheet1'],                                                                 virtualName:'LIST PENGGUNAAN OCBC gsheet.xlsx'},
+  caseAdmin:      {id:'1jFOCmQVXrF0aGkkvf7EI-bl2F9AYYom0EMUA8xs4GN8', tabs:['Daily Case AR','Daily Case Admin (Operational)'],                         virtualName:'CASE ADMIN gsheet.xlsx'}
+};
+
+async function fetchSheetCSV(id, tab){
+  const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tab)}`;
+  const r = await fetch(url, {credentials:'omit'});
+  if (!r.ok) throw new Error(`HTTP ${r.status} on "${tab}"`);
+  return await r.text();
+}
+
+/* Build a SheetJS workbook by fetching each tab as CSV and stitching them together. */
+async function buildWorkbookFromGSheet(spec){
+  if (typeof XLSX === 'undefined'){
+    throw new Error('XLSX library not loaded');
+  }
+  const wb = XLSX.utils.book_new();
+  for (const tab of spec.tabs){
+    try {
+      const csv = await fetchSheetCSV(spec.id, tab);
+      const tmp = XLSX.read(csv, {type:'string', raw:true});
+      const ws = tmp.Sheets[tmp.SheetNames[0]];
+      // Pastikan worksheet punya !ref yang valid agar XLSX.write tidak gagal
+      if (!ws['!ref']) {
+        const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:''});
+        if (rows.length) ws['!ref'] = XLSX.utils.encode_range({s:{r:0,c:0}, e:{r:rows.length-1, c:(rows[0]||[]).length-1}});
+        else ws['!ref'] = 'A1:A1';
+      }
+      XLSX.utils.book_append_sheet(wb, ws, tab);
+    } catch(e){
+      console.warn('[gsheet] skip tab', tab, e.message);
+    }
+  }
+  return wb;
+}
+
+/* Wrap a workbook in a File-like shim so existing importers (which expect
+   .name + .arrayBuffer()) can consume it with ZERO code changes. */
+function wrapWorkbookAsFile(wb, virtualName){
+  // XLSX.write type:'array' mengembalikan regular Array, bukan Uint8Array
+  // Perlu convert ke ArrayBuffer secara eksplisit
+  const arr = XLSX.write(wb, {type:'array', bookType:'xlsx'});
+  const u8 = new Uint8Array(arr);
+  const buf = u8.buffer;
+  return {
+    name: virtualName || 'gsheet.xlsx',
+    arrayBuffer: async () => buf,
+    __wb: wb
+  };
+}
+
+/* Orchestrator — pulls every sheet, feeds existing importers, refreshes UI. */
+let __syncBusy = false;
+async function syncAllFromSheets(){
+  if (__syncBusy) return;
+  __syncBusy = true;
+  try {
+    toast('🔄 Syncing dari Google Sheets...', 'info');
+    const order = [
+      ['dailyPayment',    importDailyPayment],
+      ['revAllClub',      importRevAllClub],
+      ['bankIncome',      importBankIncome],
+      ['saldo',           importBalance],
+      ['listPenggunaan',  importOCBCUsage],
+      ['checkPayment',    importOCBCCheck],
+      ['caseAdmin',       importCaseAdmin]
+    ];
+    let ok=0, fail=0;
+    for (const [key, fn] of order){
+      try {
+        const spec = GSHEETS[key];
+        const wb = await buildWorkbookFromGSheet(spec);
+        if (!wb.SheetNames.length){ console.warn('[gsheet] empty workbook', key); continue; }
+        const fakeFile = wrapWorkbookAsFile(wb, spec.virtualName);
+        await fn(fakeFile);
+        ok++;
+      } catch(e){
+        fail++;
+        console.warn('[gsheet] import failed', key, e);
+      }
+    }
+    refreshAll();
+    try { updateStorageIndicator(); } catch(e){}
+    const stamp = new Date().toLocaleTimeString();
+    const ind = document.getElementById('syncStamp');
+    if (ind) ind.textContent = 'Last sync: ' + stamp;
+    toast(`✓ Sync done · ${ok} source(s) ok · ${fail} failed`, ok && !fail ? 'ok' : 'info');
+  } finally {
+    __syncBusy = false;
+  }
 }
 
 /* 1. DAILY PAYMENT — AP (spec)
@@ -3369,8 +3361,38 @@ async function importOCBCUsage(file){
    Verified to match "Outstanding Loan" sheet TOTAL exactly, and Repay+Out = sum(Col G). */
 async function importOCBCCheck(file){
   const wb = await readXLSX(file);
+
+  /* Preferred path (matches user spec) — Outstanding Loan sheet,
+     TOTAL row → col E = Outstanding Bank Loan. */
+  const outSheet = wb.Sheets['Outstanding Loan'] || wb.Sheets['OUTSTANDING LOAN'];
+  if (outSheet){
+    const rows = XLSX.utils.sheet_to_json(outSheet, {header:1, defval:null, raw:true});
+    let outTotal = null;
+    for (let i=0;i<rows.length;i++){
+      const r = rows[i]||[];
+      const a = r[0];
+      if (typeof a === 'string' && a.toUpperCase().trim() === 'TOTAL'){
+        const v = r[4]; // column E
+        if (v != null && !isNaN(+v)) outTotal = +v;
+        break;
+      }
+    }
+    if (outTotal != null){
+      const prev = load(K.loanOut, {}) || {};
+      save(K.loanOut, Object.assign({}, prev, {
+        outPrincipal: null, outInterest: null, outTotal: outTotal,
+        updatedAt: new Date().toISOString()
+      }));
+      touchMeta();
+      const z = document.getElementById('upOCBC'); if (z) z.classList.add('ok');
+      toast(`✓ Outstanding Loan imported · TOTAL = ${fmt(outTotal)}`, 'ok');
+      return;
+    }
+  }
+
+  /* Legacy path — iterate TL sheets (kept so locally-uploaded legacy files still work). */
   const tlSheets = wb.SheetNames.filter(n => /^TL\b/i.test(n));
-  if (!tlSheets.length){ toast('INVALID FILE FORMAT · tidak ada sheet TL', 'err'); throw new Error('no TL'); }
+  if (!tlSheets.length){ toast('INVALID FILE FORMAT · Outstanding Loan/TL sheet tidak ditemukan', 'err'); throw new Error('no TL'); }
   const today = new Date();
   today.setUTCHours(0,0,0,0);
   const todayMs = today.getTime();
@@ -3387,12 +3409,12 @@ async function importOCBCCheck(file){
     for (let i=hdr+1;i<rows.length;i++){
       const r = rows[i]||[];
       const dateCell = r[1];
-      const outCell = r[3];           // Col D — null on summary/TOTAL row
+      const outCell = r[3];
       const p = +(r[4]||0);
       const intr = +(r[5]||0);
       if (!dateCell) continue;
-      if (outCell == null || outCell === '') continue; // exclude TOTAL/summary row
-      if (p === 0 && intr === 0) continue;             // skip opening row
+      if (outCell == null || outCell === '') continue;
+      if (p === 0 && intr === 0) continue;
       const d = parseDate(dateCell);
       if (!d) continue;
       rowsSeen++;
@@ -3406,71 +3428,45 @@ async function importOCBCCheck(file){
     updatedAt: new Date().toISOString()
   });
   touchMeta();
-  $('#upOCBC').classList.add('ok');
+  const z2 = document.getElementById('upOCBC'); if (z2) z2.classList.add('ok');
   toast(`✓ Checking Payment imported · ${tlSheets.length} TL sheets · ${rowsSeen} rows`, 'ok');
 }
 
-/* dispatcher */
-async function importFile(type, files){
-  if (!files || !files.length) return;
-  const prog = btnProgressStart('btnUploadData','⬆ Importing');
-  let i=0;
-  for (const f of files){
-    try{
-      prog(((i)/files.length)*100);
-      if (type==='ap') await importDailyPayment(f);
-      else if (type==='rev') await importRevAllClub(f);
-      else if (type==='bank') await importBankIncome(f);
-      else if (type==='saldo' || type==='balance') await importBalance(f);
-      else if (type==='tax') await importTax(f);
-      else if (type==='ocbc_usage') await importOCBCUsage(f);
-      else if (type==='ocbc_check') await importOCBCCheck(f);
-    }catch(e){ console.error(e); toast('Gagal import '+f.name+': '+e.message, 'err'); }
-    i++; prog((i/files.length)*100);
-  }
-  prog(100);
-  refreshAll();
-}
-async function importAuto(files){
-  const prog = btnProgressStart('btnUploadData','⬆ Importing');
-  let i=0;
-  for (const f of files){
-    const n = f.name.toUpperCase();
-    try{
-      prog((i/files.length)*100);
-      if (n.includes('DAILY') && n.includes('PAYMENT')) await importDailyPayment(f);
-      else if (n.includes('REV_ALLCLUB') || n.includes('REVENUE')) await importRevAllClub(f);
-      else if (n.includes('BANK') && n.includes('INCOME')) await importBankIncome(f);
-      else if (n.includes('SALDO') && n.includes('CLOSING')) await importBalance(f);
-      else if (n.includes('CHECK') && n.includes('PAYMENT')) await importOCBCCheck(f);
-      else if (n.includes('PENGGUNAAN') || n.includes('USAGE')) await importOCBCUsage(f);
-      else if (n.includes('TAX') || n.includes('PAJAK')) await importTax(f);
-      else toast('File tidak dikenali: '+f.name, 'err');
-    }catch(e){ console.error(e); toast('Gagal: '+f.name, 'err'); }
-    i++; prog((i/files.length)*100);
-  }
-  prog(100);
-  refreshAll();
+/* CASE ADMIN (dedicated sheet) — Sheet1 columns follow the existing REV_ALLCLUB
+   Daily Case schema so we reuse the same normalization logic and dedupe by
+   outlet|date|case key. */
+async function importCaseAdmin(file){
+  const wb = await readXLSX(file);
+  const sh = wb.Sheets['Sheet1'] || wb.Sheets[wb.SheetNames[0]];
+  if (!sh) return;
+  const rows = XLSX.utils.sheet_to_json(sh, {defval:null});
+  if (!rows.length) return;
+  const existing = load(K.admin, []);
+  const seen = new Set(existing.map(x=>x.__k));
+  let added = 0;
+  rows.forEach(r=>{
+    const outlet = r['Club'] || r['Outlet'] || r['OUTLET'];
+    const dt = r['Tanggal Transaksi'] || r['Tanggal'] || r['Date'];
+    const method = r['Method'] || r['Metode'];
+    const nom = r['Nominal'];
+    const cs = r['Case'] || r['Keterangan'];
+    const ket = r['Ket'] || r['Status'];
+    if (!outlet || !cs) return;
+    const key = `${outlet}|${dt}|${cs}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    existing.push({
+      __k:key, outlet, date:dt, method, nominal:nom, case:cs,
+      status:(ket && String(ket).toUpperCase().includes('DONE')) ? 'DONE' : 'OPEN'
+    });
+    added++;
+  });
+  save(K.admin, existing);
+  touchMeta();
+  if (added) toast(`✓ Case admin synced · +${added} new`, 'ok');
 }
 
-/* Upload Balance — spec button: only accepts "saldo closing ..." files */
-function onUploadBalanceClick(){
-  document.getElementById('balanceFileInput').click();
-}
-async function importBalanceMulti(files){
-  if (!files || !files.length) return;
-  const prog = btnProgressStart('btnUploadBalance','⬆ Uploading');
-  let i=0;
-  for (const f of files){
-    try{
-      prog((i/files.length)*100);
-      await importBalance(f);
-    }catch(e){ console.error(e); /* importBalance already toasts INVALID FILE FORMAT */ }
-    i++; prog((i/files.length)*100);
-  }
-  prog(100);
-  refreshAll();
-}
+/* --- upload dispatchers removed · data now syncs from Google Sheets --- */
 
 /* ========================================================================
    STATE & FILTERING
@@ -4366,16 +4362,18 @@ function renderLoan(){
     : loans.filter(x=>x.type==='DRAWDOWN').reduce((a,b)=>a+Math.abs(b.amount||0),0);
   $('#loanDraw').textContent = fmt(drawdown);
 
-  if (outRec && outRec.repayPrincipal != null){
-    $('#loanRepayP').textContent = fmt(outRec.repayPrincipal);
-    $('#loanRepayI').textContent = fmt(outRec.repayInterest);
-    $('#loanRepayT').textContent = fmt(outRec.repayTotal);
-    $('#loanOutP').textContent = fmt(outRec.outPrincipal);
-    $('#loanOutI').textContent = fmt(outRec.outInterest);
-    $('#loanOutT').textContent = fmt(outRec.outTotal);
-  } else {
-    ['loanRepayP','loanRepayI','loanRepayT','loanOutP','loanOutI','loanOutT'].forEach(id => { const el=$('#'+id); if(el) el.textContent='—'; });
-  }
+  /* Render whatever is present. Google-Sheets mode only provides totals
+     (outTotal from "Outstanding Loan" TOTAL col E, repayment from LIST
+     PENGGUNAAN TOTAL col G). Legacy mode still provides full P/I breakdown. */
+  const setTxt = (id,v) => { const el=$('#'+id); if (el) el.textContent = (v==null?'—':fmt(v)); };
+  const repayT = (totals && totals.repayment != null) ? totals.repayment
+                : (outRec ? outRec.repayTotal : null);
+  setTxt('loanRepayP', outRec ? outRec.repayPrincipal : null);
+  setTxt('loanRepayI', outRec ? outRec.repayInterest : null);
+  setTxt('loanRepayT', repayT);
+  setTxt('loanOutP',   outRec ? outRec.outPrincipal : null);
+  setTxt('loanOutI',   outRec ? outRec.outInterest : null);
+  setTxt('loanOutT',   outRec ? outRec.outTotal : null);
 
   if (!loans.length){ $('#loanEmpty').style.display='block'; $('#tblLoan tbody').innerHTML=''; return; }
   $('#loanEmpty').style.display='none';
@@ -4494,7 +4492,118 @@ async function downloadDashboard(){
   // Remove any previous embedded snapshot tag before injecting a fresh one
   html = html.replace(/<script id="cashly-snapshot" type="application\/json">[\s\S]*?<\/script>/,'');
   const payload = JSON.stringify(snapshot).replace(/</g,'\\u003c');
-  const inject = `
+  const inject = `<script id="cashly-snapshot" type="application/json">${payload}<\/script>`;
+  const withInject = html.replace('</head>', inject+'</head>');
+  prog(75);
+  const blob = new Blob(['<!DOCTYPE html>\n'+withInject], {type:'text/html;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `Cashly_Dashboard_${todayLocal()}.html`;
+  document.body.appendChild(a); a.click(); a.remove();
+  prog(95);
+  URL.revokeObjectURL(url);
+  prog(100);
+  toast('✓ Dashboard tersimpan (data historical terembed di file)', 'ok');
+}
 
+/* Convert to PDF — spec: show % progress */
+async function convertToPDF(){
+  const prog = btnProgressStart('btnPDF','🖨 Rendering');
+  prog(15);
+  // Give the UI a tick so the progress bar paints before the blocking print dialog
+  await new Promise(r=>setTimeout(r,120));
+  prog(55);
+  try { window.print(); } finally { prog(100); }
+}
 
-</body></html>
+/* On load: restore snapshot if present */
+function restoreSnapshotIfAny(){
+  // After an explicit clear, never re-hydrate from an embedded snapshot.
+  if (localStorage.getItem('cashly.cleared')) return;
+  const tag = document.getElementById('cashly-snapshot');
+  if (!tag) return;
+  try{
+    const snap = JSON.parse(tag.textContent);
+    Object.entries(snap).forEach(([k,v])=>{
+      if (v && Object.keys(v).length) localStorage.setItem(K[k]||('cashly.'+k), JSON.stringify(v));
+    });
+    toast('✓ Snapshot data di-restore', 'info');
+  }catch(e){ console.warn(e); }
+}
+
+/* ========================================================================
+   REFRESH
+   ======================================================================== */
+function refreshAll(){
+  const m = state.module;
+  try{
+    if (m==='dashboard') renderDashboard();
+    else if (m==='ap') renderAP();
+    else if (m==='ar') renderAR();
+    else if (m==='admin') renderAdmin();
+    else if (m==='tax') renderTax();
+    else if (m==='treasury') renderTreasury();
+    else if (m==='loan') renderLoan();
+    else if (m==='history') renderHistory();
+  }catch(e){ console.error(e); }
+  // Always refresh history counters & storage indicator
+  updateStorageIndicator();
+  // Upload zone states
+  ['ap','rev','bank','saldo','tax','loan'].forEach(k=>{
+    const db = (k==='tax' || k==='loan') ? load(K[k],[]) : load(K[k],{});
+    const hasData = Array.isArray(db) ? db.length>0 : Object.keys(db).length>0;
+    const map = {ap:'#upAP', rev:'#upREV', bank:'#upBANK', saldo:'#upSALDO', tax:'#upTAX', loan:'#upOCBC'};
+    const el = document.querySelector(map[k]);
+    if (el) el.classList.toggle('ok', hasData);
+  });
+}
+
+/* ========================================================================
+   INIT
+   ======================================================================== */
+document.addEventListener('DOMContentLoaded', ()=>{
+  /* ---------- ONE-TIME SEED (auto-injected, preserves existing data) ---------- */
+  /* seed removed */
+  // Defensive: every init step runs under its own try so that one failure
+  // never blocks the rest (sidebar/Clear History must always remain clickable).
+  try { restoreSnapshotIfAny(); } catch(e){ console.error('restoreSnapshotIfAny:', e); }
+
+  // Calendar: use device local date, auto-update on load
+  try { const navDate = $('#navDate'); if (navDate) navDate.textContent = todayLocal(); } catch(e){ console.error('navDate:', e); }
+
+  try {
+    const dF = $('#dateFrom'); if (dF) dF.addEventListener('change', e=>{ state.dateFrom = e.target.value || null; refreshAll(); });
+    const dT = $('#dateTo');   if (dT) dT.addEventListener('change', e=>{ state.dateTo   = e.target.value || null; refreshAll(); });
+  } catch(e){ console.error('wire inputs:', e); }
+
+  /* ---------- GOOGLE SHEETS AUTO-SYNC ----------
+     Run once on load + every 5 minutes. Failures are non-fatal: whatever
+     was cached in localStorage from the previous sync is still rendered. */
+  try {
+    // fire-and-forget so the rest of init isn't blocked by network latency
+    setTimeout(()=>{ syncAllFromSheets().catch(e=>console.warn('sync:', e)); }, 400);
+    setInterval(()=>{ syncAllFromSheets().catch(e=>console.warn('sync:', e)); }, 5*60*1000);
+  } catch(e){ console.error('auto-sync wire:', e); }
+
+  try {
+    const known = allKnownDates();
+    if (known.length){
+      state.dateFrom = known[0]; state.dateTo = known[known.length-1];
+      const dF = $('#dateFrom'); if (dF) dF.value = state.dateFrom;
+      const dT = $('#dateTo');   if (dT) dT.value = state.dateTo;
+    } else {
+      // default range: last 30 days ending today (device local — UTC-safe math)
+      const end = todayLocal();
+      state.dateFrom = offsetISOUtc(end, -29); state.dateTo = end;
+      const dF = $('#dateFrom'); if (dF) dF.value = state.dateFrom;
+      const dT = $('#dateTo');   if (dT) dT.value = state.dateTo;
+    }
+  } catch(e){ console.error('date range init:', e); }
+
+  try { updateStorageIndicator(); } catch(e){ console.error('updateStorageIndicator:', e); }
+  try { refreshAll(); } catch(e){ console.error('refreshAll:', e); }
+});
+</script>
+</body>
+</html>
