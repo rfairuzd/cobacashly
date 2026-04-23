@@ -2556,6 +2556,22 @@ const GSHEETS = {
   caseAdmin:      {id:'1jFOCmQVXrF0aGkkvf7EI-bl2F9AYYom0EMUA8xs4GN8', tabs:['Daily Case AR','Daily Case Admin (Operational)'],                         virtualName:'CASE ADMIN gsheet.xlsx'}
 };
 
+/* ── Helper: parse nilai dari CSV string atau number ── */
+function toNum(v){
+  if (v == null || v === '') return 0;
+  if (v != null && v !== '' && !isNaN(toNum(v))) return toNum(v);
+  // String dari gviz CSV: "1,234,567.89" atau " 1.234.567,89 "
+  const s = String(v).replace(/[^0-9.,\-]/g,'').trim();
+  // Deteksi format: kalau ada koma sebagai decimal (1.234,56) → swap
+  if (/\d\.\d{3},\d/.test(s)){
+    return parseFloat(s.replace(/\./g,'').replace(',','.')) || 0;
+  }
+  // Format normal: 1,234,567.89 → hapus koma ribuan
+  return parseFloat(s.replace(/,/g,'')) || 0;
+}
+function isNum(v){ return toNum(v) > 0; }
+
+
 async function fetchSheetCSV(id, tab){
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tab)}`;
   const r = await fetch(url, {credentials:'omit'});
@@ -2703,9 +2719,9 @@ async function importDailyPayment(file){
     for (let i=1; i<rows.length; i++){
       const r = rows[i]; if (!r) continue;
       const dRaw = r[0];
-      const amt  = r[3];
+      const amt  = toNum(r[3]);
       const outl = r[4];
-      if (typeof amt !== 'number' || !(amt > 0)) continue;
+      if (!(amt > 0)) continue;
       const dt = parseDate(dRaw);
       const d  = dt ? toISO(dt) : null;
       // outlet from col E; if blank on sub-sheets (e.g. API sheet only has 4 cols),
@@ -2844,7 +2860,7 @@ async function importRevAllClub(file){
     const low = raw.toLowerCase();
     if (!raw || low.startsWith('grand') || low.includes('total') ) continue;
     // skip pure category headers (all numeric columns blank = header band)
-    const nums = r.slice(1).filter(v => typeof v === 'number');
+    const nums = r.slice(1).filter(v => v != null && v !== '' && !isNaN(toNum(v)) && toNum(v) !== 0).map(v => toNum(v));
     if (!nums.length){
       // This is likely a category row like 'INVESTOR', 'PARTNERS' — skip
       if (/^(investor|partners|pusat|epic|epicultura)s?$/i.test(raw)) continue;
@@ -2855,13 +2871,13 @@ async function importRevAllClub(file){
     outletEntity[keyN] = classifyOutlet(raw);
     for (let c=1; c<r.length; c++){
       const d = dateCols[c]; const v = r[c];
-      if (d && typeof v === 'number' && v > 0){
+      if (d && toNum(v) > 0){
         if (!dailyByOutlet[d]) dailyByOutlet[d] = {};
         dailyByOutlet[d][keyN] = (dailyByOutlet[d][keyN]||0) + v;
       }
     }
-    if (totalColIdx >= 0 && typeof r[totalColIdx] === 'number') outletTotal[keyN] = r[totalColIdx];
-    if (avgColIdx >= 0 && typeof r[avgColIdx] === 'number') outletAvg[keyN] = r[avgColIdx];
+    if (totalColIdx >= 0 && r[totalColIdx] != null && r[totalColIdx] !== '') outletTotal[keyN] = toNum(r[totalColIdx]);
+    if (avgColIdx >= 0 && r[avgColIdx] != null && r[avgColIdx] !== '') outletAvg[keyN] = toNum(r[avgColIdx]);
   }
 
   // Persist per spec: store by date, keeping displayName for UI
@@ -2904,8 +2920,8 @@ async function importRevAllClub(file){
   const trFtl    = totalResultRows[0] != null ? rows[totalResultRows[0]] : null;
   const trApi    = totalResultRows[1] != null ? rows[totalResultRows[1]] : null;
   const trStride = totalResultRows[2] != null ? rows[totalResultRows[2]] : null;
-  if (trApi && totalColIdx >= 0 && typeof trApi[totalColIdx] === 'number') specEntity.api = trApi[totalColIdx];
-  if (trStride && totalColIdx >= 0 && typeof trStride[totalColIdx] === 'number') specEntity.stride = trStride[totalColIdx];
+  if (trApi && totalColIdx >= 0 && typeof trApi[totalColIdx] === 'number') specEntity.api = toNum(trApi[totalColIdx]);
+  if (trStride && totalColIdx >= 0 && typeof trStride[totalColIdx] === 'number') specEntity.stride = toNum(trStride[totalColIdx]);
 
   // Row 83 = Included Partners & Investors (find by label match)
   let trIncluded = null;
@@ -3008,7 +3024,7 @@ async function importBankIncome(file){
     const dtRaw  = r[2];          // Col C — spec: Date
     const nom    = r[3];          // Col D — nominal amount
     const method = r[4];          // Col E — spec: Payment Method
-    if (typeof nom !== 'number' || nom <= 0) continue;
+    if (!(toNum(nom) > 0)) continue;
     const dt = parseDate(dtRaw); if (!dt) continue;
     const d = toISO(dt);
     const outletDisp = club ? String(club).trim() : '(Unknown)';
@@ -3069,10 +3085,10 @@ async function importBankIncome(file){
         if (BANKS.includes(uRaw)){
           // bank sub-row under current section
           if (curSection){
-            const bankObj = { byDate:{}, grandTotal: (gtCol>=0 && typeof r[gtCol]==='number') ? r[gtCol] : 0 };
+            const bankObj = { byDate:{}, grandTotal: (gtCol>=0 && r[gtCol]!=null && r[gtCol]!=='') ? toNum(r[gtCol]) : 0 };
             for (let c=1; c<r.length; c++){
               const d = sdDateCols[c]; const v = r[c];
-              if (d && typeof v === 'number') bankObj.byDate[d] = v;
+              if (d && v!=null && v!=='') bankObj.byDate[d] = toNum(v);
             }
             sections[curSection].banks[uRaw] = bankObj;
           }
@@ -3080,10 +3096,10 @@ async function importBankIncome(file){
         }
         // Section header row (e.g. 'AKADEMI PILATES', 'INVESTOR 5', 'PARTNER', 'PUSAT', 'STRIDE')
         curSection = uRaw;
-        const secObj = { byDate:{}, grandTotal: (gtCol>=0 && typeof r[gtCol]==='number') ? r[gtCol] : 0, banks:{} };
+        const secObj = { byDate:{}, grandTotal: (gtCol>=0 && r[gtCol]!=null && r[gtCol]!=='') ? toNum(r[gtCol]) : 0, banks:{} };
         for (let c=1; c<r.length; c++){
           const d = sdDateCols[c]; const v = r[c];
-          if (d && typeof v === 'number') secObj.byDate[d] = v;
+          if (d && v!=null && v!=='') secObj.byDate[d] = toNum(v);
         }
         sections[curSection] = secObj;
       }
@@ -3093,14 +3109,14 @@ async function importBankIncome(file){
       if (grandTotalRow){
         for (let c=1; c<grandTotalRow.length; c++){
           const d = sdDateCols[c]; const v = grandTotalRow[c];
-          if (d && typeof v === 'number') grandByDate[d] = v;
+          if (d && v!=null && v!=='') grandByDate[d] = toNum(v);
         }
       }
       // Build bank grand totals across all sections (sum of per-bank Grand Total columns across sections)
       const bankGrandTotal = { BCA:0, BRI:0, MANDIRI:0, OCBC:0 };
       Object.values(sections).forEach(sec=>{
         BANKS.forEach(b=>{
-          if (sec.banks[b] && typeof sec.banks[b].grandTotal === 'number') bankGrandTotal[b] += sec.banks[b].grandTotal;
+          if (sec.banks[b] && sec.banks[b].grandTotal != null) bankGrandTotal[b] += toNum(sec.banks[b].grandTotal);
         });
       });
 
@@ -3197,7 +3213,7 @@ async function importBalance(file){
     let hasNum = false, rowTotal = 0;
     for (const [name, idx] of BANK_COLS){
       const v = r[idx];
-      const num = (typeof v === 'number') ? v : (v!=null ? Number(String(v).replace(/,/g,'')) : 0);
+      const num = (true) ? toNum(v) : 0;
       const safe = Number.isFinite(num) ? num : 0;
       vals[name] = safe;
       if (safe !== 0) hasNum = true;
@@ -3225,7 +3241,7 @@ async function importBalance(file){
   const readNum = (rix, cix) => {
     const r = soRows[rix]; if (!r) return 0;
     const v = r[cix];
-    if (typeof v === 'number') return v;
+    if (v != null && v !== '' && !isNaN(toNum(v))) return toNum(v);
     if (v == null) return 0;
     const n = Number(String(v).replace(/[^0-9.\-]/g,''));
     return Number.isFinite(n) ? n : 0;
@@ -3241,11 +3257,11 @@ async function importBalance(file){
     const rows = XLSX.utils.sheet_to_json(scSheet, {header:1, defval:null, raw:true});
     for (let i=2; i<rows.length; i++){
       const r = rows[i]; if (!r) continue;
-      if (r[0] && r[1] && typeof r[3]==='number'){
+      if (r[0] && r[1] && r[3]!=null && r[3]!==''){
         accounts.push({rek:String(r[0]), name:String(r[1]).trim(), saldo:r[3], src:'primary', cls:classifyAccount(r[1])});
       }
-      if (r[7] && r[8] && typeof r[9]==='number'){
-        accounts.push({rek:String(r[7]), name:String(r[8]).trim(), saldo:r[9], src:'secondary', cls:classifyAccount(r[8])});
+      if (r[7] && r[8] && r[9]!=null && r[9]!==''){
+        accounts.push({rek:String(r[7]), name:String(r[8]).trim(), saldo:toNum(r[9]), src:'secondary', cls:classifyAccount(r[8])});
       }
     }
   }
@@ -4210,7 +4226,7 @@ function renderBankIncomeAnalyses(bankSpec){
       if (!bObj) return;
       filtered.forEach(d => {
         const v = bObj.byDate[d];
-        if (typeof v === 'number') bankVals[b] += v;
+        if (v != null && v !== '') bankVals[b] += toNum(v);
       });
     });
   });
