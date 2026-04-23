@@ -2559,10 +2559,11 @@ const GSHEETS = {
 /* ── Helper: parse nilai dari CSV string atau number ── */
 function toNum(v){
   if (v == null || v === '') return 0;
-  if (v != null && v !== '' && !isNaN(toNum(v))) return toNum(v);
-  // String dari gviz CSV: "1,234,567.89" atau " 1.234.567,89 "
+  if (typeof v === 'number') return isFinite(v) ? v : 0;
+  // Parse string dari gviz CSV: "1,234,567.89" atau " 1.234.567,89 "
   const s = String(v).replace(/[^0-9.,\-]/g,'').trim();
-  // Deteksi format: kalau ada koma sebagai decimal (1.234,56) → swap
+  if (!s) return 0;
+  // Deteksi format: kalau ada titik ribuan dan koma desimal (1.234,56)
   if (/\d\.\d{3},\d/.test(s)){
     return parseFloat(s.replace(/\./g,'').replace(',','.')) || 0;
   }
