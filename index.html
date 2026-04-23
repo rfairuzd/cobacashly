@@ -3368,19 +3368,41 @@ async function importOCBCCheck(file){
   if (outSheet){
     const rows = XLSX.utils.sheet_to_json(outSheet, {header:1, defval:null, raw:true});
     let outTotal = null;
+    let outPrincipal = null;
+    let outInterest = null;
     for (let i=0;i<rows.length;i++){
       const r = rows[i]||[];
-      const a = r[0];
-      if (typeof a === 'string' && a.toUpperCase().trim() === 'TOTAL'){
-        const v = r[4]; // column E
-        if (v != null && !isNaN(+v)) outTotal = +v;
+      const a = String(r[0]||'').trim();
+      // Cek baris TOTAL: kolom A kosong ATAU berisi 'TOTAL' (case insensitive)
+      const isTotal = a==='' || a.toUpperCase()==='TOTAL';
+      // Pastikan ada nilai numerik di kolom D (principal) atau G (total)
+      const vPrincipal = r[4]; // col E = Outstanding Principal
+      const vInterest  = r[5]; // col F = Interest
+      const vTotal     = r[6]; // col G = Total
+      if (isTotal && vTotal != null && !isNaN(parseFloat(String(vTotal).replace(/[^0-9.-]/g,'')))){
+        outPrincipal = parseFloat(String(vPrincipal||0).replace(/[^0-9.-]/g,''))||null;
+        outInterest  = parseFloat(String(vInterest||0).replace(/[^0-9.-]/g,''))||null;
+        outTotal     = parseFloat(String(vTotal).replace(/[^0-9.-]/g,''));
         break;
+      }
+    }
+    // Fallback: ambil dari baris terakhir yang punya nilai di kolom G
+    if (outTotal == null){
+      for (let i=rows.length-1;i>=0;i--){
+        const r = rows[i]||[];
+        const vTotal = r[6];
+        if (vTotal != null && !isNaN(parseFloat(String(vTotal).replace(/[^0-9.-]/g,'')))){
+          outPrincipal = parseFloat(String(r[4]||0).replace(/[^0-9.-]/g,''))||null;
+          outInterest  = parseFloat(String(r[5]||0).replace(/[^0-9.-]/g,''))||null;
+          outTotal     = parseFloat(String(vTotal).replace(/[^0-9.-]/g,''));
+          break;
+        }
       }
     }
     if (outTotal != null){
       const prev = load(K.loanOut, {}) || {};
       save(K.loanOut, Object.assign({}, prev, {
-        outPrincipal: null, outInterest: null, outTotal: outTotal,
+        outPrincipal: outPrincipal, outInterest: outInterest, outTotal: outTotal,
         updatedAt: new Date().toISOString()
       }));
       touchMeta();
